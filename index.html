@@ -34,11 +34,40 @@
     </section>
 
     <!-- Tampilan setelah login (sementara) -->
-    <section id="home-view" hidden>
-      <h1>Halo!</h1>
-      <p class="sub">Kamu login sebagai <strong id="user-email"></strong></p>
-      <p>Fitur setor dan tarik akan kita buat di langkah berikutnya.</p>
-      <button id="logout-btn" class="secondary">Keluar</button>
+        <section id="home-view" hidden>
+      <div class="topbar">
+        <span id="user-email"></span>
+        <button id="logout-btn" class="link">Keluar</button>
+      </div>
+
+      <div class="saldo-box">
+        <span>Saldo</span>
+        <strong id="saldo">Rp 0</strong>
+      </div>
+
+      <form id="trx-form">
+        <label for="tipe">Jenis</label>
+        <select id="tipe">
+          <option value="setor">Setor (uang masuk)</option>
+          <option value="tarik">Tarik (uang keluar)</option>
+        </select>
+
+        <label for="jumlah">Jumlah (Rp)</label>
+        <input id="jumlah" type="number" min="1" step="1" required inputmode="numeric" />
+
+        <label for="catatan">Catatan (opsional)</label>
+        <input id="catatan" type="text" maxlength="100" />
+
+        <label for="tanggal">Tanggal</label>
+        <input id="tanggal" type="date" required />
+
+        <button type="submit" id="trx-btn">Simpan</button>
+      </form>
+
+      <p id="trx-msg" class="msg" hidden></p>
+
+      <h2>Riwayat</h2>
+      <ul id="riwayat" class="riwayat"></ul>
     </section>
 
   </main>
