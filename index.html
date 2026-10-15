@@ -7,7 +7,41 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main id="app">Memuat...</main>
+  <main id="app">
+
+    <!-- Tampilan login / daftar -->
+    <section id="auth-view" hidden>
+      <h1>Tabungan Saya</h1>
+      <p class="sub" id="auth-title">Masuk ke akunmu</p>
+
+      <form id="auth-form">
+        <label for="email">Email</label>
+        <input id="email" type="email" required autocomplete="email" />
+
+        <label for="password">Password</label>
+        <input id="password" type="password" required minlength="6"
+               autocomplete="current-password" />
+
+        <button type="submit" id="auth-btn">Masuk</button>
+      </form>
+
+      <p id="msg" class="msg" hidden></p>
+
+      <p class="switch">
+        <span id="switch-text">Belum punya akun?</span>
+        <a href="#" id="switch-link">Daftar</a>
+      </p>
+    </section>
+
+    <!-- Tampilan setelah login (sementara) -->
+    <section id="home-view" hidden>
+      <h1>Halo!</h1>
+      <p class="sub">Kamu login sebagai <strong id="user-email"></strong></p>
+      <p>Fitur setor dan tarik akan kita buat di langkah berikutnya.</p>
+      <button id="logout-btn" class="secondary">Keluar</button>
+    </section>
+
+  </main>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="config.js"></script>
